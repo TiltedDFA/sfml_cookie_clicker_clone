@@ -6,12 +6,12 @@ class back_ground
 public:
 	back_ground() = default;
 	back_ground(const std::string& bground_location);
-	back_ground(const back_ground& other);
-	~back_ground();
 
+
+	const sf::Sprite& get_sprite()const;
 	void draw_bground(sf::RenderWindow& win)const;
 private:
-	sf::Texture* m_bground_texture = new sf::Texture();
-	sf::Sprite* m_bground_sprite = new sf::Sprite();
+	sf::Texture m_bground_texture;
+	sf::Sprite m_bground_sprite;
 };
 

@@ -1,9 +1,11 @@
 #include "game.h"
-game::game()
+
+game::~game()
 {
-    m_cookie = cookie(cookie_file);
-    m_back_ground = back_ground(bground_file);
+    delete m_cookie;
+    delete m_back_ground;
 }
+
 
 void game::run()
 {
@@ -12,10 +14,29 @@ void game::run()
     sf::Clock delta_clock;
     while (window.isOpen())
     {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            switch (event.type)
+            {
+            case sf::Event::KeyPressed:
+                if(event.key.code == sf::Keyboard::Escape)
+                {
+                    window.close();
+                    break;
+                }
+                break;
+            case sf::Event::Closed:
+                window.close();
+                break;
+            default:
+                break;
+            }
+        }
         window.clear();
-       // m_back_ground.draw_bground(window);
-        m_cookie.draw_cookie(window);
-        m_cookie.rotate_cookie(delta_clock.restart());
+        window.draw(m_back_ground->get_sprite());
+        window.draw(m_cookie->get_sprite());
+        m_cookie->rotate_cookie(delta_clock.restart());
         window.display();
     }
 }
