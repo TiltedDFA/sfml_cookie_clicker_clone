@@ -6,6 +6,7 @@ upgrade<starting_price, c_inc_amount, p_scaling>::upgrade(const std::string& tex
 	{
 		throw std::exception("FAIL TO LOAD UPGRADE TEXTURE");
 	}
+	m_ugrade_sprite.setTexture(m_ugrade_texture);
 	m_ugrade_sprite.setPosition(sprite_pos);
 }
 
