@@ -139,11 +139,13 @@
     <ClCompile Include="cookie.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="upgrade.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="back_ground.h" />
     <ClInclude Include="cookie.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="upgrade.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
