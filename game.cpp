@@ -15,6 +15,7 @@ game::game()
     m_cookie_display_text.setOutlineThickness(3);
     m_cookie_display_text.setPosition(100, 100);
     m_cookie_display_text.setString("Cookie amount: " + std::to_string(m_cookie_amount));
+    clicker_upgrade.update_price();
 }
 game::~game()
 {
@@ -70,6 +71,7 @@ void game::run()
 					{
                         update_cookie_amount();
 					}
+                    clicker_upgrade.handle_click(m_mouse_pos, m_cookie_amount, m_passive_cookie_rate);
                     update_text();
                 }
                 break;
@@ -85,6 +87,8 @@ void game::run()
         window.draw(m_cookie->get_sprite());
         m_cookie->rotate_cookie(delta_clock.restart());
         tick_update_cookie_timer(cookie_rate_timer);
+        update_text();
+        clicker_upgrade.display_sprite(m_cookie_amount, window);
         window.draw(m_cookie_display_text);
         window.display();
     }

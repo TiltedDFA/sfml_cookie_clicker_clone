@@ -1,6 +1,6 @@
 #pragma once
 #include "back_ground.h"
-#define COOKIE_RAD 210
+
 class cookie
 {
 public:

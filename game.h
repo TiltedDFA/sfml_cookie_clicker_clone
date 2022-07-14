@@ -1,9 +1,6 @@
 #pragma once
 #include "upgrade.h"
 
-#define COOKIE_PATH "assets/images/cookie.png"
-#define BGROUND_PATH "assets/images/back_ground.png"
-#define FONT_PATH "assets/fonts/OETZTYP_.TTF"
 class game
 {
 public:
@@ -19,9 +16,10 @@ private:
 	sf::Vector2i m_mouse_pos{};
 	double m_cookie_amount;
 	long long int m_click_cookie_rate;
-	long long int m_passive_cookie_rate;
+	double m_passive_cookie_rate;
 	sf::String m_cookie_display_string;
 	sf::Text m_cookie_display_text;
 	sf::Font m_font;
+	upgrade<10, 0.1, 1.6> clicker_upgrade{ CLICKER_UPGRADE_PATH,CLICKER_UPGRADE_ALT_PATH,887.5f,100.0f };//112.5f = size
 };
 

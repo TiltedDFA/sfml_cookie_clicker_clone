@@ -2,7 +2,10 @@
 
 cookie::cookie(const std::string& cookie_location)
 {
-	m_cookie_texture.loadFromFile(cookie_location);
+	if (!m_cookie_texture.loadFromFile(cookie_location))
+	{
+		EXCEPTIONN("FAILED TO LOAD COOKIE TEXTURE");
+	}
 	m_cookie_sprite.setTexture(m_cookie_texture);
 	m_cookie_sprite.setPosition(500.0f, 500.0f);
 	m_cookie_sprite.setOrigin(300, 300);

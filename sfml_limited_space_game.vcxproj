@@ -139,7 +139,6 @@
     <ClCompile Include="cookie.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="upgrade.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="back_ground.h" />

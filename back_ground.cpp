@@ -1,7 +1,10 @@
 #include "back_ground.h"
 back_ground::back_ground(const std::string& bground_location)
 {
-	m_bground_texture.loadFromFile(bground_location);
+	if(!m_bground_texture.loadFromFile(bground_location))
+	{
+		EXCEPTIONN("FAILED TO LOAD BACK GROUND");
+	}
 	m_bground_sprite.setTexture(m_bground_texture);
 	m_bground_sprite.setPosition({ 0,0 });
 }
