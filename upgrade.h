@@ -36,7 +36,7 @@ public:
 	}
 	void update_price()
 	{
-		m_price += m_price_scaling * m_amount_purchased;
+		m_price *= m_price_scaling;// *m_amount_purchased;
 		m_display_price_text.setString("$" + std::to_string(m_price));
 	}
 	[[nodiscard]] double get_increase_amount()

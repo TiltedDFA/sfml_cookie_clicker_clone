@@ -138,12 +138,14 @@
     <ClCompile Include="back_ground.cpp" />
     <ClCompile Include="cookie.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="helper_functions.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="back_ground.h" />
     <ClInclude Include="cookie.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="helper_functions.h" />
     <ClInclude Include="upgrade.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
